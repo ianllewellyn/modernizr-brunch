@@ -1,5 +1,8 @@
 # modernizr-brunch
 
+<img src="//img.shields.io/npm/v/modernizr-brunch.svg" alt="npm version" height="18">
+<img src="//img.shields.io/npm/dt/modernizr-brunch.svg" alt="npm downloads" height="18">
+
 [Modernizr](http://modernizr.com) builder for [brunch](http://brunch.io).
 Automatically generates you a custom modernizr build including any Modernizr tests
 in your brinch project.
