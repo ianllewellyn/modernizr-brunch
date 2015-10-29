@@ -1,7 +1,7 @@
 # modernizr-brunch
 
-Custom modernizr builder for [brunch](http://brunch.io). Generates you a modernizr build
-for any tests you are using in your project.
+Custom [modernizr](http://modernizr.com) builder for [brunch](http://brunch.io).
+Generates you a modernizr build including any tests you are using in your project.
 
 ## Installation
 
@@ -31,11 +31,12 @@ Any tests that you want to include in the modernizr file. You might need this
 if for some reason your project used modernizr tests that can not be picked up
 automatically.
 
+[All Modernizr tests](https://modernizr.com/docs#features)
+
 #### `excludeTests` (array, optional)
 
 Any tests that you want to explicitly exclude from the build. Most useful for
 css classes that match modernizr test names.
-
 
 ## Example brunch-config.coffee
 
