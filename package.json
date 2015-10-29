@@ -1,0 +1,21 @@
+{
+  "name": "modernizr-brunch",
+  "version": "0.0.0",
+  "description": "Modernizr plugin for brunch",
+  "author": {
+    "name": "Ian Llewellyn",
+    "url": "http://www.ianllewellyn.com/"
+  },
+  "homepage": "https://github.com/ianllewellyn/modernizr-brunch",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ianllewellyn/modernizr-brunch.git"
+  },
+  "scripts": {
+    "test": "echo 'no tests'"
+  },
+  "dependencies": {
+    "customizr": "^1.0.0-alpha"
+  }
+}
