@@ -1,7 +1,8 @@
 # modernizr-brunch
 
-Custom [modernizr](http://modernizr.com) builder for [brunch](http://brunch.io).
-Generates you a modernizr build including any tests you are using in your project.
+[Modernizr](http://modernizr.com) builder for [brunch](http://brunch.io).
+Automatically generates you a custom modernizr build including any Modernizr tests
+in your brinch project.
 
 ## Installation
 
