@@ -5,7 +5,7 @@ for any tests you are using in your project.
 
 ## Installation
 
-`npm install --save javascript-brunch`
+`npm install --save modernizr-brunch`
 
 ## Configuration
 
