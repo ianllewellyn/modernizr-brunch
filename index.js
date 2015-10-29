@@ -1,10 +1,26 @@
-"use strict"
+'use strict'
 
 var modernizr = require('customizr');
+var path = require('path');
 
 function ModernizrBrunch(brunchCfg)
 {
 	var modernizrConfig = (brunchCfg.plugins && brunchCfg.plugins.modernizr) || {};
+	var filesConfig = (brunchCfg.files) || {};
+	var publicDir = brunchCfg.paths.public;
+	
+	// Find all generated files from config.paths
+	var files = []
+	for(var type in filesConfig)
+	{
+		var joinTo = filesConfig[type].joinTo;
+		for(var file in joinTo)
+		{
+			var filePath = path.join(publicDir, file);
+			if(files.indexOf(filePath) == -1)
+				files.push(filePath);
+		}
+	}
 	
 	this.config = {
 		
@@ -12,14 +28,13 @@ function ModernizrBrunch(brunchCfg)
 		devFile: false,
 		crawl: true,
 		
-		// We'll scan the files brunch generates, but we wont know them until
-		// onCompile()
+		// Files to scan, all output files specified in brunch config.files
 		files: {
-			src: []
+			src: files
 		},
 		
 		// Where do we write the modernir file?
-		dest: modernizrConfig.destination || 'public/modernizr.js',
+		dest: path.join(publicDir, modernizrConfig.destination || 'modernizr.js'),
 		
 		// If brunch is optimizing then so do we
 		uglify: (brunchCfg && brunchCfg.optimize),
@@ -34,12 +49,6 @@ function ModernizrBrunch(brunchCfg)
 ModernizrBrunch.prototype.brunchPlugin = true;
 ModernizrBrunch.prototype.onCompile = function(generatedFiles)
 {
-	// List of files brunch has generated
-	this.config.files.src = generatedFiles.map(function(x){ return x.path});
-	
-	console.log(this.config);
-	
-	// Do the compile
 	modernizr(this.config);
 };
 

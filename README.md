@@ -13,9 +13,10 @@ Configuration is handled using brunch config plugin options.
 
 #### `destination` (string, optional)
 
-The output location of your generated modernizr file.
+The output location of your generated modernizr file relative to the root of
+your public dir (the same as joinTo paths).
 
-Default: `public/javascripts/modernizr.js`.
+Default: `{config.paths.public}/modernizr.js`.
 
 #### `options` (array, optional)
 
@@ -43,7 +44,7 @@ css classes that match modernizr test names.
 ```coffee
 	plugins:
 		modernizr:
-			destination: 'public/javascripts/modernizr.js'
+			destination: 'javascripts/modernizr.js'
 			options: [
 				'setClasses'
 			]
